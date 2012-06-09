@@ -22,15 +22,23 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.SuspendLayout()
+ components = New System.ComponentModel.Container()
+
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+  Me.SuspendLayout()
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+ Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Me.SuspendLayout()
+        '
+        'Form1
+        '
+        Me.Text = "Web-Log"
         Me.ResumeLayout(False)
 
     End Sub
