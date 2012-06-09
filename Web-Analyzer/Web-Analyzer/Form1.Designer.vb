@@ -43,6 +43,7 @@ Partial Class Form1
         Me.EnableToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.DisableToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.fileName = New System.Windows.Forms.Label
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -184,12 +185,23 @@ Partial Class Form1
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(72, 27)
         Me.AboutToolStripMenuItem.Text = "About"
         '
+        'fileName
+        '
+        Me.fileName.AutoSize = True
+        Me.fileName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.fileName.Location = New System.Drawing.Point(118, 254)
+        Me.fileName.Name = "fileName"
+        Me.fileName.Size = New System.Drawing.Size(83, 16)
+        Me.fileName.TabIndex = 12
+        Me.fileName.Text = "File Name:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(728, 454)
         Me.Controls.Add(Me.OpenfileTextBox)
+        Me.Controls.Add(Me.fileName)
         Me.Controls.Add(Me.firstLBL)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -223,5 +235,6 @@ Partial Class Form1
     Friend WithEvents EnableToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DisableToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents fileName As System.Windows.Forms.Label
 
 End Class
