@@ -38,6 +38,10 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="rtaGlassEffectsLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\rtaGlassEffectsLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -135,6 +139,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images8.ico" />
+    <None Include="Resources\statistics2.jpg" />
+    <None Include="Resources\images %284%29.jpg" />
+    <None Include="Resources\images8.ico" />
+    <None Include="Resources\favicon_32x32.ico" />
+    <None Include="Resources\images10.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
