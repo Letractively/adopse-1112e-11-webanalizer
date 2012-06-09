@@ -23,18 +23,18 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
+        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
@@ -71,6 +71,7 @@ Partial Class Form1
         Me.closeLBL = New System.Windows.Forms.Label
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -179,7 +180,7 @@ Partial Class Form1
         '
         'SettingsToolStripMenuItem
         '
-        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontColorToolStripMenuItem, Me.ResetAllToolStripMenuItem, Me.VoiceToolStripMenuItem})
+        Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VoiceToolStripMenuItem, Me.FontColorToolStripMenuItem, Me.ResetAllToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(88, 27)
         Me.SettingsToolStripMenuItem.Text = "Settings"
@@ -253,18 +254,18 @@ Partial Class Form1
         Me.Chart1.BorderlineColor = System.Drawing.Color.Transparent
         Me.Chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot
         Me.Chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea5.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea5)
         Me.Chart1.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend1.BackColor = System.Drawing.Color.Transparent
-        Legend1.Name = "Legend2"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend5.BackColor = System.Drawing.Color.Transparent
+        Legend5.Name = "Legend2"
+        Me.Chart1.Legends.Add(Legend5)
         Me.Chart1.Location = New System.Drawing.Point(1, 26)
         Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend2"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
+        Series5.ChartArea = "ChartArea1"
+        Series5.Legend = "Legend2"
+        Series5.Name = "Series1"
+        Me.Chart1.Series.Add(Series5)
         Me.Chart1.Size = New System.Drawing.Size(482, 395)
         Me.Chart1.TabIndex = 0
         Me.Chart1.Text = "Chart1"
@@ -286,17 +287,17 @@ Partial Class Form1
         'Chart2
         '
         Me.Chart2.BackColor = System.Drawing.Color.Transparent
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart2.ChartAreas.Add(ChartArea2)
+        ChartArea6.Name = "ChartArea1"
+        Me.Chart2.ChartAreas.Add(ChartArea6)
         Me.Chart2.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend2.Name = "Legend1"
-        Me.Chart2.Legends.Add(Legend2)
+        Legend6.Name = "Legend1"
+        Me.Chart2.Legends.Add(Legend6)
         Me.Chart2.Location = New System.Drawing.Point(1, 26)
         Me.Chart2.Name = "Chart2"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart2.Series.Add(Series2)
+        Series6.ChartArea = "ChartArea1"
+        Series6.Legend = "Legend1"
+        Series6.Name = "Series1"
+        Me.Chart2.Series.Add(Series6)
         Me.Chart2.Size = New System.Drawing.Size(354, 181)
         Me.Chart2.TabIndex = 0
         Me.Chart2.Text = "Chart2"
@@ -317,17 +318,17 @@ Partial Class Form1
         'Chart3
         '
         Me.Chart3.BackColor = System.Drawing.Color.Transparent
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart3.ChartAreas.Add(ChartArea3)
+        ChartArea7.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea7)
         Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend3.Name = "Legend1"
-        Me.Chart3.Legends.Add(Legend3)
+        Legend7.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend7)
         Me.Chart3.Location = New System.Drawing.Point(1, 26)
         Me.Chart3.Name = "Chart3"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart3.Series.Add(Series3)
+        Series7.ChartArea = "ChartArea1"
+        Series7.Legend = "Legend1"
+        Series7.Name = "Series1"
+        Me.Chart3.Series.Add(Series7)
         Me.Chart3.Size = New System.Drawing.Size(354, 181)
         Me.Chart3.TabIndex = 0
         Me.Chart3.Text = "Chart3"
@@ -382,17 +383,17 @@ Partial Class Form1
         'Chart4
         '
         Me.Chart4.BackColor = System.Drawing.Color.Transparent
-        ChartArea4.Name = "ChartArea1"
-        Me.Chart4.ChartAreas.Add(ChartArea4)
+        ChartArea8.Name = "ChartArea1"
+        Me.Chart4.ChartAreas.Add(ChartArea8)
         Me.Chart4.Dock = System.Windows.Forms.DockStyle.Fill
-        Legend4.Name = "Legend1"
-        Me.Chart4.Legends.Add(Legend4)
+        Legend8.Name = "Legend1"
+        Me.Chart4.Legends.Add(Legend8)
         Me.Chart4.Location = New System.Drawing.Point(1, 26)
         Me.Chart4.Name = "Chart4"
-        Series4.ChartArea = "ChartArea1"
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Me.Chart4.Series.Add(Series4)
+        Series8.ChartArea = "ChartArea1"
+        Series8.Legend = "Legend1"
+        Series8.Name = "Series1"
+        Me.Chart4.Series.Add(Series8)
         Me.Chart4.Size = New System.Drawing.Size(316, 292)
         Me.Chart4.TabIndex = 0
         Me.Chart4.Text = "Chart4"
@@ -501,5 +502,6 @@ Partial Class Form1
     Friend WithEvents closeLBL As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
+    Friend WithEvents ColorDialog1 As System.Windows.Forms.ColorDialog
 
 End Class

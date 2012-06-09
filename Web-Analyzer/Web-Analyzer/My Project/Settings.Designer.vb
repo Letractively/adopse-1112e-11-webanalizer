@@ -83,6 +83,15 @@ Namespace My
                 Me("Voice") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("ControlText")>  _
+        Public ReadOnly Property fontColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("fontColor"),Global.System.Drawing.Color)
+            End Get
+        End Property
     End Class
 End Namespace
 

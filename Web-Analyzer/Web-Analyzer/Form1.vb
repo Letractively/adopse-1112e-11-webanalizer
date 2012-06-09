@@ -11,6 +11,7 @@ Public Class Form1
     Dim statusList As List(Of String) = New List(Of String)
     Dim methodList As List(Of String) = New List(Of String)
     Dim daysList As List(Of String) = New List(Of String)
+    Dim usersPerDay As List(Of String) = New List(Of String)
 
     <StructLayout(LayoutKind.Sequential)> _
     Public Structure MARGINS
@@ -44,7 +45,10 @@ Public Class Form1
             fillData()
             Me.Size = New Point(900, 520)
             AdvLDL.Visible = True
+            loading()
             loadData()
+            showChart()
+            Disloading()
             'vreiskei posoun mines exei to arxeio
             For Each strX1 As String In New String() {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
                 For m As Integer = 0 To list.Count - 1 Step 1
@@ -73,9 +77,11 @@ Public Class Form1
     Private Sub updateChart1()
         '-----------------------------------------------------------------------------------------------------------
         ' chart 1
+
         With Me.Chart1
             .Series.Clear()
             .Titles.Clear()
+            .ChartAreas(0).AxisX.CustomLabels.Clear()
             Dim chart13 As String() = New String() {"Visits", "Sites"}
             Dim title As String = ""
             For Each rt In chart13
@@ -127,11 +133,11 @@ Public Class Form1
             Next
 
             For intMonth As Integer = 1 To monthList.Count
-                Dim cl As New DataVisualization.Charting.CustomLabel
-                cl.FromPosition = (intMonth - 1) + 0.5
-                cl.ToPosition = intMonth + 0.5
-                cl.Text += monthList(intMonth - 1).ToString
-                .ChartAreas(0).AxisX.CustomLabels.Add(cl)
+                Dim cl1 As New DataVisualization.Charting.CustomLabel
+                cl1.FromPosition = (intMonth - 1) + 0.5
+                cl1.ToPosition = intMonth + 0.5
+                cl1.Text += monthList(intMonth - 1).ToString
+                .ChartAreas(0).AxisX.CustomLabels.Add(cl1)
             Next
 
         End With
@@ -145,7 +151,7 @@ Public Class Form1
         With Me.Chart2
             .Series.Clear()
             .Titles.Clear()
-
+            .ChartAreas(0).AxisX.CustomLabels.Clear()
             Dim chart14 As String() = New String() {"Bytes per Month"}
             GroupBox2.Text = chart14(0)
             Dim tr As Integer = 0
@@ -186,7 +192,6 @@ Public Class Form1
         'chart 3
         With Me.Chart3
             .Series.Clear()
-            .Titles.Clear()
             GroupBox3.Text = "Sites Status"
             With .Series.Add("Series1")
                 .ChartType = DataVisualization.Charting.SeriesChartType.Doughnut
@@ -212,11 +217,11 @@ Public Class Form1
     Private Sub updateChart4(ByVal myMonth As String)
         With Me.Chart4
             .Series.Clear()
-            .Titles.Clear()
+            .ChartAreas(0).AxisX.CustomLabels.Clear()
             GroupBox5.Text = "Visits per Day"
             Dim chart14 As String() = New String() {"Visits"}
             Dim tr As Integer = 0
-            Dim usersPerDay As List(Of String) = New List(Of String)
+            'Dim usersPerDay As List(Of String) = New List(Of String)
             For Each m In chart14
                 With .Series.Add(m)
                     For Each u In daysList
@@ -254,6 +259,7 @@ Public Class Form1
     Private Sub OpenfileTextBox_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles OpenfileTextBox.Click
         loading()
         UnVisible()
+        HideChart()
         openFileDialog(sender, e)
     End Sub
 
@@ -326,8 +332,6 @@ Public Class Form1
         For Each s As String In myLines
             list.Add(s)
         Next
-        showChart()
-        Disloading()
     End Sub
 
     Private Sub openFileDialog(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -353,11 +357,23 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+        updateChart4(ComboBox1.SelectedItem)
+    End Sub
+
     Sub resetAll()
         flag = False
         fileNamesList.Clear()
         list.Clear()
         monthList.Clear()
+        usersPerDay.Clear()
+        daysList.Clear()
+        ComboBox1.Items.Clear()
+        Chart1.Update()
+        Chart2.Update()
+        Chart3.Update()
+        Chart4.Update()
     End Sub
 
     Private Sub UnVisible()
@@ -488,5 +504,28 @@ Public Class Form1
 
     Private Sub DisableToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DisableToolStripMenuItem.Click
         My.Settings.Voice = False
+    End Sub
+
+    Private Sub ResetAllToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResetAllToolStripMenuItem.Click
+        My.Settings.Voice = True
+        GroupBox1.ForeColor = My.Settings.fontColor
+        GroupBox2.ForeColor = My.Settings.fontColor
+        GroupBox3.ForeColor = My.Settings.fontColor
+        GroupBox4.ForeColor = My.Settings.fontColor
+        GroupBox5.ForeColor = My.Settings.fontColor
+        firstLBL.ForeColor = My.Settings.fontColor
+        fileName.ForeColor = My.Settings.fontColor
+    End Sub
+
+    Private Sub FontColorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FontColorToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            GroupBox1.ForeColor = ColorDialog1.Color
+            GroupBox2.ForeColor = ColorDialog1.Color
+            GroupBox3.ForeColor = ColorDialog1.Color
+            GroupBox4.ForeColor = ColorDialog1.Color
+            GroupBox5.ForeColor = ColorDialog1.Color
+            firstLBL.ForeColor = ColorDialog1.Color
+            fileName.ForeColor = ColorDialog1.Color
+        End If
     End Sub
 End Class

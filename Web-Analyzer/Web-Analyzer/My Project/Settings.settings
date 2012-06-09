@@ -11,5 +11,8 @@
     <Setting Name="Voice" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="fontColor" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">ControlText</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
