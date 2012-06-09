@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images8.ico" />
+    <None Include="app.config" />
     <None Include="Resources\statistics2.jpg" />
     <None Include="Resources\images %284%29.jpg" />
     <None Include="Resources\images8.ico" />

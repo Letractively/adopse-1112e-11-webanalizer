@@ -67,6 +67,10 @@ Partial Class Form1
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
         Me.GroupBox5 = New System.Windows.Forms.GroupBox
         Me.Chart4 = New System.Windows.Forms.DataVisualization.Charting.Chart
+        Me.AdvLDL = New System.Windows.Forms.Label
+        Me.closeLBL = New System.Windows.Forms.Label
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,7 +147,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(684, 31)
+        Me.MenuStrip1.Size = New System.Drawing.Size(694, 31)
         Me.MenuStrip1.TabIndex = 18
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -202,13 +206,13 @@ Partial Class Form1
         'EnableToolStripMenuItem
         '
         Me.EnableToolStripMenuItem.Name = "EnableToolStripMenuItem"
-        Me.EnableToolStripMenuItem.Size = New System.Drawing.Size(139, 28)
+        Me.EnableToolStripMenuItem.Size = New System.Drawing.Size(152, 28)
         Me.EnableToolStripMenuItem.Text = "Enable"
         '
         'DisableToolStripMenuItem
         '
         Me.DisableToolStripMenuItem.Name = "DisableToolStripMenuItem"
-        Me.DisableToolStripMenuItem.Size = New System.Drawing.Size(139, 28)
+        Me.DisableToolStripMenuItem.Size = New System.Drawing.Size(152, 28)
         Me.DisableToolStripMenuItem.Text = "Disable"
         '
         'AboutToolStripMenuItem
@@ -393,11 +397,43 @@ Partial Class Form1
         Me.Chart4.TabIndex = 0
         Me.Chart4.Text = "Chart4"
         '
+        'AdvLDL
+        '
+        Me.AdvLDL.AutoSize = True
+        Me.AdvLDL.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.AdvLDL.ForeColor = System.Drawing.Color.Blue
+        Me.AdvLDL.Location = New System.Drawing.Point(824, 466)
+        Me.AdvLDL.Name = "AdvLDL"
+        Me.AdvLDL.Size = New System.Drawing.Size(62, 16)
+        Me.AdvLDL.TabIndex = 8
+        Me.AdvLDL.Text = "Advance"
+        Me.AdvLDL.Visible = False
+        '
+        'closeLBL
+        '
+        Me.closeLBL.AutoSize = True
+        Me.closeLBL.ForeColor = System.Drawing.Color.Blue
+        Me.closeLBL.Location = New System.Drawing.Point(1190, 27)
+        Me.closeLBL.Name = "closeLBL"
+        Me.closeLBL.Size = New System.Drawing.Size(33, 13)
+        Me.closeLBL.TabIndex = 19
+        Me.closeLBL.Text = "Close"
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(684, 482)
+        Me.ClientSize = New System.Drawing.Size(694, 492)
+        Me.Controls.Add(Me.closeLBL)
+        Me.Controls.Add(Me.AdvLDL)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
@@ -461,5 +497,9 @@ Partial Class Form1
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents Chart4 As System.Windows.Forms.DataVisualization.Charting.Chart
+    Friend WithEvents AdvLDL As System.Windows.Forms.Label
+    Friend WithEvents closeLBL As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Timer2 As System.Windows.Forms.Timer
 
 End Class

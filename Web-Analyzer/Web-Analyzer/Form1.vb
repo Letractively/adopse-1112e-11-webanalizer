@@ -25,7 +25,6 @@ Public Class Form1
     Dim pMargins As New MARGINS With {.Top = -1, .Right = -1, .Left = -1, .Bottom = -1}
 
     Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
         Dim en As Boolean = False
         DwmIsCompositionEnabled(en)
         If en Then
@@ -33,6 +32,8 @@ Public Class Form1
         End If
         Me.TransparencyKey = Color.FromKnownColor(KnownColor.AliceBlue)
         Me.BackColor = Me.TransparencyKey
+        Me.MaximumSize = New Size(1240, 520)
+        Me.MinimumSize = New Size(750, 520)
         Disloading()
         If flag <> True Then
             HideChart()
@@ -42,11 +43,12 @@ Public Class Form1
             NewDataToolStripMenuItem.Enabled = True
             fillData()
             Me.Size = New Point(900, 520)
+            AdvLDL.Visible = True
             loadData()
             'vreiskei posoun mines exei to arxeio
             For Each strX1 As String In New String() {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"}
-                For m As Integer = 0 To List.Count - 1 Step 1
-                    If List.ElementAt(m).Contains("/" & strX1 & "/") Then
+                For m As Integer = 0 To list.Count - 1 Step 1
+                    If list.ElementAt(m).Contains("/" & strX1 & "/") Then
                         If Not monthList.Contains(strX1) Then
                             monthList.Add(strX1)
                         End If
@@ -417,5 +419,74 @@ Public Class Form1
         UnVisible()
         loading()
         openFileDialog(sender, e)
+    End Sub
+
+    Private Sub AdvLDL_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles AdvLDL.Click
+        AdvLDL.Hide()
+        closeLBL.Show()
+        Timer1.Enabled = True
+        If Timer2.Enabled = True Then
+            Timer2.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ClsLBL_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles closeLBL.Click
+        AdvLDL.Show()
+        Timer2.Enabled = True
+        If Timer1.Enabled = True Then
+            Timer1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub AdvLDL_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles AdvLDL.MouseHover
+        AdvLDL.Font = New Font("Verdana", 16, FontStyle.Bold)
+        AdvLDL.Location = New Point(779, 460)
+    End Sub
+
+    Private Sub AdvLDL_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles AdvLDL.MouseLeave
+        AdvLDL.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Regular)
+        AdvLDL.Location = My.Settings.adcLBLLocation
+    End Sub
+
+
+    Private Sub closeLBL_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles closeLBL.MouseHover
+        closeLBL.Font = New Font("Verdana", 16, FontStyle.Bold)
+        closeLBL.Location = New Point(1155, 18)
+    End Sub
+
+    Private Sub closeLBL_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles closeLBL.MouseLeave
+        closeLBL.Font = New Font("Microsoft Sans Serif", 10, FontStyle.Regular)
+        closeLBL.Location = My.Settings.closeLBLLocation
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Me.Width += 10
+        If Me.Width = 1240 Then
+            Timer1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub Timer2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer2.Tick
+        Me.Width -= 10
+        If Me.Width = 900 Then
+            Timer2.Enabled = False
+        End If
+    End Sub
+
+    Private Sub Form1_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If My.Settings.Voice Then
+            Dim SAPI
+            SAPI = CreateObject("sapi.spvoice")
+            SAPI.Speak("Bye, see you next time.")
+        End If
+        My.Settings.Voice = True
+    End Sub
+
+    Private Sub EnableToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EnableToolStripMenuItem.Click
+        My.Settings.Voice = True
+    End Sub
+
+    Private Sub DisableToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DisableToolStripMenuItem.Click
+        My.Settings.Voice = False
     End Sub
 End Class
