@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Web-Analyzer")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Hewlett-Packard")> 
+<Assembly: AssemblyDescription("With this application you can make statistics on LogFile.This Project created by Koutoglou Pavlos and Tsigara Efthimia")> 
+<Assembly: AssemblyCompany("Web-Analyzer")> 
 <Assembly: AssemblyProduct("Web-Analyzer")> 
-<Assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2012")> 
+<Assembly: AssemblyCopyright("Copyright © Koutoglou Pavlos - Tsigara Efthimia  2012")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
