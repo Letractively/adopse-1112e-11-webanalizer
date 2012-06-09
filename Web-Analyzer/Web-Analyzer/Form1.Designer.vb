@@ -27,7 +27,6 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.firstLBL = New System.Windows.Forms.Label
-        Me.fileName = New System.Windows.Forms.Label
         Me.OpenfileTextBox = New System.Windows.Forms.TextBox
         Me.OpenFD = New System.Windows.Forms.OpenFileDialog
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
@@ -82,16 +81,6 @@ Partial Class Form1
         Me.firstLBL.TabIndex = 10
         Me.firstLBL.Text = "You must open a log file first."
         '
-        'fileName
-        '
-        Me.fileName.AutoSize = True
-        Me.fileName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.fileName.Location = New System.Drawing.Point(118, 254)
-        Me.fileName.Name = "fileName"
-        Me.fileName.Size = New System.Drawing.Size(83, 16)
-        Me.fileName.TabIndex = 12
-        Me.fileName.Text = "File Name:"
-        '
         'OpenfileTextBox
         '
         Me.OpenfileTextBox.Location = New System.Drawing.Point(207, 254)
@@ -121,7 +110,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.AboutToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(744, 31)
+        Me.MenuStrip1.Size = New System.Drawing.Size(728, 31)
         Me.MenuStrip1.TabIndex = 18
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -129,70 +118,70 @@ Partial Class Form1
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(50, 27)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(110, 28)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewDataToolStripMenuItem})
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(54, 27)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'NewDataToolStripMenuItem
         '
         Me.NewDataToolStripMenuItem.Name = "NewDataToolStripMenuItem"
-        Me.NewDataToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NewDataToolStripMenuItem.Size = New System.Drawing.Size(159, 28)
         Me.NewDataToolStripMenuItem.Text = "New Data"
         '
         'SettingsToolStripMenuItem
         '
         Me.SettingsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontColorToolStripMenuItem, Me.ResetAllToolStripMenuItem, Me.VoiceToolStripMenuItem})
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(88, 27)
         Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'FontColorToolStripMenuItem
         '
         Me.FontColorToolStripMenuItem.Name = "FontColorToolStripMenuItem"
-        Me.FontColorToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FontColorToolStripMenuItem.Size = New System.Drawing.Size(164, 28)
         Me.FontColorToolStripMenuItem.Text = "Font Color"
         '
         'ResetAllToolStripMenuItem
         '
         Me.ResetAllToolStripMenuItem.Name = "ResetAllToolStripMenuItem"
-        Me.ResetAllToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ResetAllToolStripMenuItem.Size = New System.Drawing.Size(164, 28)
         Me.ResetAllToolStripMenuItem.Text = "Reset All"
         '
         'VoiceToolStripMenuItem
         '
         Me.VoiceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnableToolStripMenuItem, Me.DisableToolStripMenuItem})
         Me.VoiceToolStripMenuItem.Name = "VoiceToolStripMenuItem"
-        Me.VoiceToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VoiceToolStripMenuItem.Size = New System.Drawing.Size(164, 28)
         Me.VoiceToolStripMenuItem.Text = "Voice"
         '
         'EnableToolStripMenuItem
         '
         Me.EnableToolStripMenuItem.Name = "EnableToolStripMenuItem"
-        Me.EnableToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EnableToolStripMenuItem.Size = New System.Drawing.Size(139, 28)
         Me.EnableToolStripMenuItem.Text = "Enable"
         '
         'DisableToolStripMenuItem
         '
         Me.DisableToolStripMenuItem.Name = "DisableToolStripMenuItem"
-        Me.DisableToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DisableToolStripMenuItem.Size = New System.Drawing.Size(139, 28)
         Me.DisableToolStripMenuItem.Text = "Disable"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(72, 27)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'Form1
@@ -201,7 +190,6 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(728, 454)
         Me.Controls.Add(Me.OpenfileTextBox)
-        Me.Controls.Add(Me.fileName)
         Me.Controls.Add(Me.firstLBL)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -219,7 +207,6 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents firstLBL As System.Windows.Forms.Label
-    Friend WithEvents fileName As System.Windows.Forms.Label
     Friend WithEvents OpenfileTextBox As System.Windows.Forms.TextBox
     Friend WithEvents OpenFD As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Timer3 As System.Windows.Forms.Timer
