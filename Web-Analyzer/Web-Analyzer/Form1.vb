@@ -1,3 +1,25 @@
-﻿Public Class Form1
+﻿Imports System.Runtime.InteropServices
+Imports System.Math
 
+Public Class Form1
+    <StructLayout(LayoutKind.Sequential)> _
+    Public Structure MARGINS
+        Public Left As Integer
+        Public Right As Integer
+        Public Top As Integer
+        Public Bottom As Integer
+    End Structure
+    Declare Auto Function DwmIsCompositionEnabled Lib "dwmapi.dll" Alias "DwmIsCompositionEnabled" (ByRef pfEnable As Boolean) As Integer
+    Declare Auto Function DwmExtendFrameIntoClientArea Lib "dwmapi.dll" Alias "DwmExtendFrameIntoClientArea" (ByVal hwnd As IntPtr, ByRef pMargin As MARGINS) As Integer
+    Dim pMargins As New MARGINS With {.Top = -1, .Right = -1, .Left = -1, .Bottom = -1}
+
+    Private Sub Form1_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim en As Boolean = False
+        DwmIsCompositionEnabled(en)
+        If en Then
+            DwmExtendFrameIntoClientArea(Me.Handle, pMargins)
+        End If
+        Me.TransparencyKey = Color.FromKnownColor(KnownColor.AliceBlue)
+        Me.BackColor = Me.TransparencyKey
+    End Sub
 End Class
