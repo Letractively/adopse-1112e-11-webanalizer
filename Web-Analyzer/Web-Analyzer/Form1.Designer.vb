@@ -29,6 +29,12 @@ Partial Class Form1
         Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
@@ -54,11 +60,23 @@ Partial Class Form1
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox
+        Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox
+        Me.Chart4 = New System.Windows.Forms.DataVisualization.Charting.Chart
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.Chart3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        CType(Me.Chart4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -279,11 +297,110 @@ Partial Class Form1
         Me.Chart2.TabIndex = 0
         Me.Chart2.Text = "Chart2"
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.Controls.Add(Me.Chart3)
+        Me.GroupBox3.Font = New System.Drawing.Font("Lucida Fax", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(520, 252)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox3.Size = New System.Drawing.Size(356, 208)
+        Me.GroupBox3.TabIndex = 15
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "GroupBox3"
+        '
+        'Chart3
+        '
+        Me.Chart3.BackColor = System.Drawing.Color.Transparent
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart3.ChartAreas.Add(ChartArea3)
+        Me.Chart3.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend3.Name = "Legend1"
+        Me.Chart3.Legends.Add(Legend3)
+        Me.Chart3.Location = New System.Drawing.Point(1, 26)
+        Me.Chart3.Name = "Chart3"
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.Chart3.Series.Add(Series3)
+        Me.Chart3.Size = New System.Drawing.Size(354, 181)
+        Me.Chart3.TabIndex = 0
+        Me.Chart3.Text = "Chart3"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Controls.Add(Me.Button1)
+        Me.GroupBox4.Controls.Add(Me.ComboBox1)
+        Me.GroupBox4.Font = New System.Drawing.Font("Lucida Fax", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(903, 38)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox4.Size = New System.Drawing.Size(318, 85)
+        Me.GroupBox4.TabIndex = 16
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Choose Month"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(19, 54)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(121, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Load Chart"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.BackColor = System.Drawing.SystemColors.Window
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(19, 25)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 0
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox5.Controls.Add(Me.Chart4)
+        Me.GroupBox5.Font = New System.Drawing.Font("Lucida Fax", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.Location = New System.Drawing.Point(903, 141)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(1)
+        Me.GroupBox5.Size = New System.Drawing.Size(318, 319)
+        Me.GroupBox5.TabIndex = 17
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "GroupBox5"
+        '
+        'Chart4
+        '
+        Me.Chart4.BackColor = System.Drawing.Color.Transparent
+        ChartArea4.Name = "ChartArea1"
+        Me.Chart4.ChartAreas.Add(ChartArea4)
+        Me.Chart4.Dock = System.Windows.Forms.DockStyle.Fill
+        Legend4.Name = "Legend1"
+        Me.Chart4.Legends.Add(Legend4)
+        Me.Chart4.Location = New System.Drawing.Point(1, 26)
+        Me.Chart4.Name = "Chart4"
+        Series4.ChartArea = "ChartArea1"
+        Series4.Legend = "Legend1"
+        Series4.Name = "Series1"
+        Me.Chart4.Series.Add(Series4)
+        Me.Chart4.Size = New System.Drawing.Size(316, 292)
+        Me.Chart4.TabIndex = 0
+        Me.Chart4.Text = "Chart4"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(684, 482)
+        Me.Controls.Add(Me.GroupBox5)
+        Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.OpenfileTextBox)
@@ -304,6 +421,11 @@ Partial Class Form1
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        CType(Me.Chart4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -332,5 +454,12 @@ Partial Class Form1
     Friend WithEvents Chart1 As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Chart2 As System.Windows.Forms.DataVisualization.Charting.Chart
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Chart3 As System.Windows.Forms.DataVisualization.Charting.Chart
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents Chart4 As System.Windows.Forms.DataVisualization.Charting.Chart
 
 End Class

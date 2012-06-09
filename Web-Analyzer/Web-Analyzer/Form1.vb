@@ -53,9 +53,18 @@ Public Class Form1
                     End If
                 Next m
             Next strX1
+
+            'dhmiougei ta linklabel
+            For Each month As String In monthList
+                ComboBox1.Items.Add(month)
+            Next
+            ComboBox1.Text = monthList.ElementAt(0)
+
             '-------------------------------------------
             updateChart1()
             updateChart2()
+            updateChart3()
+            updateChart4(ComboBox1.Items(0))
         End If
     End Sub
 
@@ -170,6 +179,75 @@ Public Class Form1
         End With
     End Sub
 
+    Private Sub updateChart3()
+        '-------------------------------
+        'chart 3
+        With Me.Chart3
+            .Series.Clear()
+            .Titles.Clear()
+            GroupBox3.Text = "Sites Status"
+            With .Series.Add("Series1")
+                .ChartType = DataVisualization.Charting.SeriesChartType.Doughnut
+                For Each strX As String In New String() {"200", "206", "301", "304", "404", "405"}
+                    Dim counterPie As Integer = 0
+                    For m = 0 To list.Count - 1 Step 1
+                        If list.ElementAt(m).Contains(strX) Then
+                            counterPie += 1
+                        End If
+                    Next
+                    .Points.AddXY(strX, counterPie)
+                Next
+
+                .IsVisibleInLegend = False
+                .Label = "(#VALX)\n#PERCENT"
+            End With
+            Chart3.ChartAreas(0).Area3DStyle.Enable3D = True
+            Chart3.Series(0)("PieLabelStyle") = "Outside"
+        End With
+
+    End Sub
+
+    Private Sub updateChart4(ByVal myMonth As String)
+        With Me.Chart4
+            .Series.Clear()
+            .Titles.Clear()
+            GroupBox5.Text = "Visits per Day"
+            Dim chart14 As String() = New String() {"Visits"}
+            Dim tr As Integer = 0
+            Dim usersPerDay As List(Of String) = New List(Of String)
+            For Each m In chart14
+                With .Series.Add(m)
+                    For Each u In daysList
+                        Dim countY As Integer = 0
+                        For m3 = 0 To list.Count - 1 Step 1
+                            Dim p As Integer = list.ElementAt(m3).IndexOf(" ")
+                            Dim user As String = list.ElementAt(m3).Substring(0, p)
+                            If list.ElementAt(m3).Contains("[" & u & "/") And list.ElementAt(m3).Contains(myMonth) And Not usersPerDay.Contains(user) Then
+                                usersPerDay.Add(user)
+                                countY += 1
+                            End If
+                        Next m3
+
+                        tr += 1
+                        .Points.AddXY(tr, countY)
+                        countY = 0
+                    Next u
+                    tr = 0
+                    .IsVisibleInLegend = False
+                    .Label = "#VALX"
+                End With
+                .Series(m)("DrawingStyle") = "Wedge"
+            Next
+            usersPerDay.Clear()
+            For intMonth As Integer = 1 To daysList.Count
+                Dim cl As New DataVisualization.Charting.CustomLabel
+                cl.FromPosition = (intMonth - 1) + 0.5
+                cl.ToPosition = intMonth + 0.5
+                cl.Text += daysList(intMonth - 1).ToString
+                .ChartAreas(0).AxisX.CustomLabels.Add(cl)
+            Next
+        End With
+    End Sub
 
     Private Sub OpenfileTextBox_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles OpenfileTextBox.Click
         loading()
@@ -296,11 +374,13 @@ Public Class Form1
     Private Sub HideChart()
         GroupBox1.Hide()
         GroupBox2.Hide()
+        GroupBox3.Hide()
     End Sub
 
     Private Sub showChart()
         GroupBox1.Show()
         GroupBox2.Show()
+        GroupBox3.Show()
     End Sub
 
     Private Sub loading()
