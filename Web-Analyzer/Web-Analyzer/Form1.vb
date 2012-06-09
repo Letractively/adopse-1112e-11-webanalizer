@@ -59,6 +59,7 @@ Public Class Form1
         If firstLBL.Left <= -Width + 350 Then
             firstLBL.Left = Width + 10
         End If
+        'khjkj
     End Sub
 
     Private Sub UnVisible()
